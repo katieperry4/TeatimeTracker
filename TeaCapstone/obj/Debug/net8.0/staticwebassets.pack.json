@@ -5,6 +5,30 @@
       "PackagePath": "staticwebassets\\TeaCapstone.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\wmuser\\Desktop\\Capstone\\d424-software-engineering-capstone\\TeaCapstone\\wwwroot\\Images\\BinocIcon.png",
+      "PackagePath": "staticwebassets\\Images\\BinocIcon.png"
+    },
+    {
+      "Id": "C:\\Users\\wmuser\\Desktop\\Capstone\\d424-software-engineering-capstone\\TeaCapstone\\wwwroot\\Images\\CupIcon.png",
+      "PackagePath": "staticwebassets\\Images\\CupIcon.png"
+    },
+    {
+      "Id": "C:\\Users\\wmuser\\Desktop\\Capstone\\d424-software-engineering-capstone\\TeaCapstone\\wwwroot\\Images\\Logo.svg",
+      "PackagePath": "staticwebassets\\Images\\Logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\wmuser\\Desktop\\Capstone\\d424-software-engineering-capstone\\TeaCapstone\\wwwroot\\Images\\PaperIcon.png",
+      "PackagePath": "staticwebassets\\Images\\PaperIcon.png"
+    },
+    {
+      "Id": "C:\\Users\\wmuser\\Desktop\\Capstone\\d424-software-engineering-capstone\\TeaCapstone\\wwwroot\\Images\\TeaGuy.png",
+      "PackagePath": "staticwebassets\\Images\\TeaGuy.png"
+    },
+    {
+      "Id": "C:\\Users\\wmuser\\Desktop\\Capstone\\d424-software-engineering-capstone\\TeaCapstone\\wwwroot\\Images\\TeaGuyCropped.png",
+      "PackagePath": "staticwebassets\\Images\\TeaGuyCropped.png"
+    },
+    {
       "Id": "C:\\Users\\wmuser\\Desktop\\Capstone\\d424-software-engineering-capstone\\TeaCapstone\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

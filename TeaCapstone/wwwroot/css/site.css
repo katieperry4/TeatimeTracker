@@ -18,5 +18,184 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #EAFEDF;
+}
+
+nav {
+    background-color: #EAFEDF;
+}
+
+h1 {
+    color: #76896B;
+    font-family:'Book Antiqua';
+}
+
+p {
+    color: #515F49;
+    
+}
+
+#slogan {
+    font-style:italic;
+    width: 30%;
+   
+}
+
+.dark-bg-div {
+    background-color: #C7ED66;
+    width: 100%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    height: 400px;
+    justify-content: center;
+}
+
+.dashboard-main-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dashboard-div {
+    background-color: #515F49;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-buttons-div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px
+}
+
+.tea-guy-div {
+    width: 30%;
+    justify-items: center;
+}
+
+.teaguy {
+    width: 80%;
+    
+}
+
+.attribution {
+    color: #515F49;
+    font-size: small;
+    width: 50%
+}
+
+.home-info-div {
+    
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+#div-container {
+    padding-left: 0;
+    padding-right:0;
+    margin-right: 0;
+    margin-left:0;
+}
+
+.home-labels-div {
+    display:flex;
+    flex-direction:row; 
+    justify-content: center;
+    column-gap: 250px;
+    margin-top: 20px;
+    
+}
+
+.icon-label {
+    font-style: italic;
+    color: #76896B;
+}
+
+.home-icon-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 210px;
+    margin-top: 20px;
+}
+
+.home-icon {
+    width:8%
+}
+
+#register-button {
+    background-color: #FCE051;
+    border-radius: 10px;
+    color: #515F49;
+    margin-right: 10px;
+}
+
+#login-button {
+    background-color: #ED954A;
+    border-radius: 10px;
+    color: #515F49;
+}
+
+#add-cup-button {
+    background-color: #FCE051;
+    border-radius: 10px;
+    color: #515F49;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+#edit-cups-button {
+    background-color: #C7ED66;
+    border-radius: 10px;
+    color: #515F49;
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+}
+
+#header-logo {
+    width:70%;
+}
+
+.dashboard-stats-div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    margin-top: 80px;
+    color: #EAFEDF;
+}
+
+.cups-today-div {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.total-cups-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avg-per-day-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suggestion-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.suggestion-h3 {
+    color: #515F49;
 }

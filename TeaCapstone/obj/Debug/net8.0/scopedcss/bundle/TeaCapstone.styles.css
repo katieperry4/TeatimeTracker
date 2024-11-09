@@ -3,10 +3,12 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand[b-focx6nxq30] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: #515F49;
 }
+
 
 a[b-focx6nxq30] {
   color: #0077cc;
@@ -19,9 +21,9 @@ a[b-focx6nxq30] {
 }
 
 .nav-pills .nav-link.active[b-focx6nxq30], .nav-pills .show > .nav-link[b-focx6nxq30] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #515F49;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .border-top[b-focx6nxq30] {
@@ -41,9 +43,15 @@ button.accept-policy[b-focx6nxq30] {
 }
 
 .footer[b-focx6nxq30] {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: #515F49;
 }
+
+#navbar-logo[b-focx6nxq30] {
+    color: #515F49;
+}
+
