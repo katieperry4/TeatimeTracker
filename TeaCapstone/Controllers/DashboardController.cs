@@ -12,6 +12,8 @@ namespace TeaCapstone.Controllers
         private IDbService<TeaLog> _teaLogService;
         private IUserService _userService;
 
+        
+
         public DashboardController(IDbService<TeaType> teaTypeService, 
             IDbService<TeaVariety> teaVarietyService, 
             IDbService<TeaLog> teaLogService,
@@ -22,9 +24,10 @@ namespace TeaCapstone.Controllers
             _teaLogService = teaLogService;
             _userService = userService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            
+            var userId = await _userService.GetUserId(User);
+            ViewBag.UserId = userId;
             return View();
         }
     }
