@@ -4,6 +4,7 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using TeaCapstone;
 using TeaCapstone.Data;
 using TeaCapstone.Models;
+using TeaCapstone.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,15 @@ builder.Services.Configure<IdentityOptions>(options =>
     
 }
 );
+
+
+
+builder.Services.AddScoped<IDbService<TeaLog>, TeaLogService>();
+builder.Services.AddScoped<IDbService<TeaType>, TeaTypeService>();
+builder.Services.AddScoped<IDbService<TeaVariety>, TeaVarietyService>();
+
+
+
 
 var app = builder.Build();
 
