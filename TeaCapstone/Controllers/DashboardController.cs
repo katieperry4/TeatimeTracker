@@ -53,6 +53,14 @@ namespace TeaCapstone.Controllers
             return View();
         }
 
+        [HttpGet]
+        [Route("Dashboard/Edit/{logId}")]
+        public IActionResult Edit(int logId)
+        {
+            ViewBag.LogId = logId;
+            return View();
+        }
+
         public List<TeaVariety> GetTeaVarieties(int teaTypeId)
         {
             return _teaVarietyService.GetVarietiesByType(teaTypeId);
@@ -79,6 +87,26 @@ namespace TeaCapstone.Controllers
 
             }
             return View(model);
+        }
+
+
+        public IActionResult GetLogsByDate(DateTime date)
+        {
+            
+            List<TeaLog> logs = _teaLogService.GetCupsByDate(date);
+            List<SearchModel> searchModels = new List<SearchModel>();
+            foreach (var log in logs)
+            {
+                TeaVariety variety = _teaVarietyService.GetById(log.TeaVarietyId);
+                SearchModel searchModel = new SearchModel
+                {
+                    Date = date,
+                    LogId = log.Id,
+                    Variety = variety.Name
+                };
+                searchModels.Add(searchModel);
+            }
+            return PartialView("_LogsTablePartial", searchModels);
         }
         
     }

@@ -14,5 +14,7 @@ namespace TeaCapstone.Services
         public int GetTotalCups(string userId);
         public int GetCupsToday(string userId);
         public int CaffeineToday(string userId);
+
+        public List<TeaLog> GetCupsByDate(DateTime date);
     }
 }

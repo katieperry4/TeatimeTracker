@@ -39,7 +39,8 @@ namespace TeaCapstone.Services
 
         public  void DeleteTeaLog(TeaLog tealog)
         {
-             _dbContext.TeaLog.Remove(tealog);
+            _dbContext.TeaLog.Remove(tealog);
+            _dbContext.SaveChanges();
         }
 
         public bool UpdateTeaLog(int id, TeaLog tealog)
@@ -90,6 +91,9 @@ namespace TeaCapstone.Services
             return caffeineToday;
         }
 
-
+        public List<TeaLog> GetCupsByDate(DateTime date)
+        {
+            return _dbContext.TeaLog.Where(t => t.Time.Date == date.Date).ToList();
+        }
     }
 }
