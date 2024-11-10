@@ -57,5 +57,29 @@ namespace TeaCapstone.Controllers
         {
             return _teaVarietyService.GetVarietiesByType(teaTypeId);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddTeaLog(AddTeaLogViewModel model) 
+        {
+            if (ModelState.IsValid) 
+            {
+                var userId =  await _userService.GetUserId(User);
+                var currentUser = await _userService.GetCurrentUser(User);
+                TeaVariety currentVariety = _teaVarietyService.GetById(model.VarietyId);
+                var tealog = new TeaLog
+                {
+                    UserId = userId,
+                    TeaVarietyId = model.VarietyId,
+                    Time = model.Date,
+                    TeaVariety = currentVariety,
+                    IdentityUser = currentUser
+                };
+                _teaLogService.AddTeaLog(tealog);
+                return RedirectToAction("Index");
+
+            }
+            return View(model);
+        }
+        
     }
 }

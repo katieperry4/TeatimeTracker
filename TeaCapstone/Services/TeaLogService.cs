@@ -7,10 +7,12 @@ namespace TeaCapstone.Services
     public class TeaLogService : ITeaLogService
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly ITeaVarietyService _teaVarietyService;
 
-        public TeaLogService(ApplicationDbContext dbcontext)
+        public TeaLogService(ApplicationDbContext dbcontext, ITeaVarietyService teaVarietyService)
         {
             _dbContext = dbcontext;
+            _teaVarietyService = teaVarietyService;
         }
         public List<TeaLog> GetAllEntities()
         {
@@ -32,7 +34,7 @@ namespace TeaCapstone.Services
         {
          
             _dbContext.TeaLog.Add(tealog);
-           
+           _dbContext.SaveChanges();
         }
 
         public  void DeleteTeaLog(TeaLog tealog)
@@ -74,7 +76,8 @@ namespace TeaCapstone.Services
             int caffeineToday = 0;
             foreach (TeaLog log in todaysLogs)
             {
-                if (log.TeaVariety.CaffeineContent !=0)
+                TeaVariety currentTeaVariety = _teaVarietyService.GetById(log.TeaVarietyId);
+                if (currentTeaVariety.CaffeineContent > 0)
                 {
                     caffeineToday += log.TeaVariety.CaffeineContent;
                 }

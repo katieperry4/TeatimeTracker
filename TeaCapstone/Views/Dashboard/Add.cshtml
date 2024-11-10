@@ -1,18 +1,17 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model TeaCapstone.Models.AddTeaLogViewModel
 @{
+    ViewData["Title"] = "Dashboard";
 }
 
 <div id="add-container-div">
     <h1>Add a Cup of Tea</h1>
     <div class="dark-bg-div" id="add-div">
 
-        <div class="add-info-div">
+        <form class="add-info-div" method="post" action="@Url.Action("AddTeaLog", "Dashboard")">
             <div class="add-tea-info-div">
                 <div id="add-type">
-                    <h3 class="add-h3">Type of Tea: </h3>
-                    <select id="add-type-select">
+                    <label for="add-type-select" class="add-h3">Type of Tea: </label>
+                    <select id="add-type-select" name="TypeId">
                         <option value="">Select Tea Type</option>
                         @foreach (var teaType in ViewData["TeaTypes"] as List<TeaType>)
                         {
@@ -21,20 +20,20 @@
                     </select>
                 </div> 
                 <div id="add-variety">
-                    <h3 class="add-h3">Variety of Tea: </h3>
-                    <select id="add-variety-select">
+                    <label for="add-variety-select" class="add-h3">Variety of Tea: </label>
+                    <select id="add-variety-select" name="VarietyId">
                         <option value="">Select Tea Variety</option>
                     </select>
                 </div>
                
             </div>
             <div id="add-date-div">
-                <h3 class="add-h3">Date: </h3>
-                <input type="date"/>
+                <label  for="add-date-picker"class="add-h3">Date: </label>
+                <input id="add-date-picker date" type="date" name="Date"/>
             </div>
-            <a class="save-button">Save</a>
+            <button type="submit" class="save-button">Save</button>
 
-        </div>
+        </form>
     </div>
 
 </div>
@@ -55,7 +54,7 @@
                 teaVarieties.forEach(function (variety) 
                 {
                     var option = document.createElement('option');
-                    option.value = variety.Id;
+                    option.value = variety.id;
                     option.textContent = variety.name;
                    
                     varietyDropdown.appendChild(option);
