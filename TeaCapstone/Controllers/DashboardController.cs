@@ -8,13 +8,13 @@ namespace TeaCapstone.Controllers
     public class DashboardController : Controller
     {
         private IDbService<TeaType> _teaTypeService;
-        private IDbService<TeaVariety> _teaVarietyService;
+        private ITeaVarietyService _teaVarietyService;
         private ITeaLogService _teaLogService;
         private IUserService _userService;
         private ITeaRecommendationService _teaRecommendationService;
 
-        public DashboardController(IDbService<TeaType> teaTypeService, 
-            IDbService<TeaVariety> teaVarietyService, 
+        public DashboardController(IDbService<TeaType> teaTypeService,
+            ITeaVarietyService teaVarietyService,
             ITeaLogService teaLogService,
             IUserService userService,
             ITeaRecommendationService teaRecommendationService)
@@ -39,6 +39,23 @@ namespace TeaCapstone.Controllers
             ViewBag.RecommendedTea = recommendedTea;
 
             return View();
+        }
+
+        public IActionResult Add()
+        {
+            List<TeaType> allTeaTypes = _teaTypeService.GetAllEntities();
+            ViewData["TeaTypes"] = allTeaTypes;
+            return View();
+        }
+
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        public List<TeaVariety> GetTeaVarieties(int teaTypeId)
+        {
+            return _teaVarietyService.GetVarietiesByType(teaTypeId);
         }
     }
 }

@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div id="add-container-div">
+    <h1>Add a Cup of Tea</h1>
+    <div class="dark-bg-div" id="add-div">
+
+        <div class="add-info-div">
+            <div class="add-tea-info-div">
+                <div id="add-type">
+                    <h3 class="add-h3">Type of Tea: </h3>
+                    <select id="add-type-select">
+                        <option value="">Select Tea Type</option>
+                        @foreach (var teaType in ViewData["TeaTypes"] as List<TeaType>)
+                        {
+                            <option value="@teaType.Id">@teaType.Name</option>
+                        } 
+                    </select>
+                </div> 
+                <div id="add-variety">
+                    <h3 class="add-h3">Variety of Tea: </h3>
+                    <select id="add-variety-select">
+                        <option value="">Select Tea Variety</option>
+                    </select>
+                </div>
+               
+            </div>
+            <div id="add-date-div">
+                <h3 class="add-h3">Date: </h3>
+                <input type="date"/>
+            </div>
+            <a class="save-button">Save</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    document.getElementById('add-type-select').addEventListener('change', function() {
+        var selectedType = this.value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'GetTeaVarieties?teaTypeId=' + selectedType, true);
+        xhr.onload = function() {
+            if(xhr.status === 200) {
+                var teaVarieties = JSON.parse(xhr.responseText);
+
+                var varietyDropdown = document.getElementById('add-variety-select');
+                varietyDropdown.innerHTML = '';
+                teaVarieties.forEach(function (variety) 
+                {
+                    var option = document.createElement('option');
+                    option.value = variety.Id;
+                    option.textContent = variety.name;
+                   
+                    varietyDropdown.appendChild(option);
+                })
+            }
+        }
+        xhr.send();
+    })
+
+
+</script>

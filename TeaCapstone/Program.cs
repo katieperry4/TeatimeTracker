@@ -43,6 +43,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddScoped<IDbService<TeaLog>, TeaLogService>();
 builder.Services.AddScoped<ITeaLogService, TeaLogService>();
+builder.Services.AddScoped<ITeaVarietyService, TeaVarietyService>();
 builder.Services.AddScoped<IDbService<TeaType>, TeaTypeService>();
 builder.Services.AddScoped<IDbService<TeaVariety>, TeaVarietyService>();
 builder.Services.AddScoped<IUserService, UserService>();

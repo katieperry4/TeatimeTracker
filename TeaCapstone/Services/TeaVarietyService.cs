@@ -4,7 +4,7 @@ using TeaCapstone.Models;
 
 namespace TeaCapstone.Services
 {
-    public class TeaVarietyService : IDbService<TeaVariety>
+    public class TeaVarietyService : ITeaVarietyService
     {
         private readonly ApplicationDbContext _dbContext;
 
@@ -27,6 +27,11 @@ namespace TeaCapstone.Services
             TeaVariety teaVariety = (TeaVariety)_dbContext.TeaVariety.Where(t => t.Name == name);
 
             return teaVariety.Id;
+        }
+
+        public List<TeaVariety> GetVarietiesByType(int typeId)
+        {
+            return _dbContext.TeaVariety.Where(t => t.TeaTypeId == typeId).ToList();
         }
     }
 }

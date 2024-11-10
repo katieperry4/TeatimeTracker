@@ -210,3 +210,44 @@ p {
     height: 400px;
     justify-content: center;
 }
+
+#add-container-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-div {
+    background-color: #C7ED66;
+    height: 300px;
+}
+
+.add-info-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-tea-info-div {
+    display: flex;
+    flex-direction:row;
+    column-gap: 60px;
+   margin-bottom: 20px;
+}
+
+.add-h3 {
+    color: #515F49;
+    font-size: medium;
+}
+
+.save-button {
+    background-color: #FCE051;
+    border-radius: 10px;
+    color: #515F49;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    margin: 40px;
+}
