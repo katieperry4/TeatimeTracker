@@ -4,31 +4,32 @@
 
 <div class="dashboard-main-div">
     <h1>Dashboard</h1>
-    <h2>@ViewBag.UserId</h2>
+   
     <div id="dashboard-div" class="dark-bg-div">
         <div class="dashboard-buttons-div">
             <a id="add-cup-button" href="#">Add Cup</a>
             <a id="edit-cups-button" href="#">Edit Cups</a>
         </div>
         <div class="dashboard-stats-div">
-            <div class="cups-today-div">
-                <h2>Cups Today</h2>
-                <h1 class="stat-number">0</h1>
-            </div>
             <div class="total-cups-div">
                 <h2>Total Cups</h2>
-                <h1 class="stat-number">0</h1>
+                <h1 class="stat-number">@ViewBag.TotalCups</h1>
             </div>
+            <div class="cups-today-div">
+                <h2>Cups Today</h2>
+                <h1 class="stat-number">@ViewBag.CupsToday</h1>
+            </div>
+            
             <div class="avg-per-day-div">
-                <h2>Average Cups Per Day</h2>
-                <h1 class="stat-number">0</h1>
+                <h2>Caffeine Today (est)</h2>
+                <h1 class="stat-number">@ViewBag.CaffeineToday mg</h1>
             </div>
         </div>
 
     </div>
     <div class="suggestion-div">
         <h3 class="suggestion-h3">Next Cup You Should Try:</h3>
-        <h3 class="suggestion-h3">Insert type here</h3>
+        <h3 class="suggestion-h3">@ViewBag.RecommendedTea</h3>
     </div>
     <div class="dashboard-reports">
         <h2>Reports:</h2>

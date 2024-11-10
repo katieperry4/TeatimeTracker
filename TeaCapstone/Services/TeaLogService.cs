@@ -4,7 +4,7 @@ using TeaCapstone.Models;
 
 namespace TeaCapstone.Services
 {
-    public class TeaLogService : IDbService<TeaLog>
+    public class TeaLogService : ITeaLogService
     {
         private readonly ApplicationDbContext _dbContext;
 
@@ -22,6 +22,7 @@ namespace TeaCapstone.Services
             return (TeaLog)_dbContext.TeaLog.Where(t => t.Id == id);
         }
 
+        //note: this is by user ID
         public List<TeaLog> GetAllById(string id)
         {
             return _dbContext.TeaLog.Where(t => t.UserId == id).ToList();
@@ -56,5 +57,36 @@ namespace TeaCapstone.Services
 
             return true;
         }
+
+        public int GetTotalCups(string userId)
+        {
+            return _dbContext.TeaLog.Where(t => t.UserId == userId).Count();
+        }
+
+        public int GetCupsToday(string userId)
+        {
+            return _dbContext.TeaLog.Where(t => t.UserId == userId && t.Time == DateTime.Today).Count();
+        }
+
+        public int CaffeineToday(string userId)
+        {
+            List<TeaLog> todaysLogs = _dbContext.TeaLog.Where(t => t.Time == DateTime.Today && t.UserId == userId).ToList();
+            int caffeineToday = 0;
+            foreach (TeaLog log in todaysLogs)
+            {
+                if (log.TeaVariety.CaffeineContent !=0)
+                {
+                    caffeineToday += log.TeaVariety.CaffeineContent;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+            return caffeineToday;
+        }
+
+
     }
 }
