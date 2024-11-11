@@ -48,6 +48,7 @@ builder.Services.AddScoped<IDbService<TeaType>, TeaTypeService>();
 builder.Services.AddScoped<IDbService<TeaVariety>, TeaVarietyService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITeaRecommendationService, TeaRecommendationService>();
+builder.Services.AddScoped<IReportsService, ReportsService>();
 
 
 

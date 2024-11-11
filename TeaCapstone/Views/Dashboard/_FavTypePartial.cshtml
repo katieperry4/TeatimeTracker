@@ -1,0 +1,21 @@
+﻿@model IEnumerable<TeaCapstone.Models.FavTypeModel>
+<div class="reports-table-holder">
+    <h3 class="report-h3">Report generated at: @DateTime.Now;</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Variety: </th>
+            <th>Cups: </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr class="search-row ">
+                <td class="reports-row-data">@log.Name</td>
+                <td class="reports-row-data">@log.TotalCups</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

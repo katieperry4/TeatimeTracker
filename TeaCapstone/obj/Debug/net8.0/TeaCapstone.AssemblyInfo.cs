@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeaCapstone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ea138f53e10e78643703c8756dd17edfa1ec90b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9288db3bf23e92ed8a39179e36007a765fa869e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeaCapstone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeaCapstone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

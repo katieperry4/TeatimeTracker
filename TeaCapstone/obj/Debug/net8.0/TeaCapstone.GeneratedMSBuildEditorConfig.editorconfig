@@ -38,6 +38,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/wmuser/Desktop/Capstone/d424-software-engineering-capstone/TeaCapstone/Views/Dashboard/_CaffeinePerDayPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9DYWZmZWluZVBlckRheVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wmuser/Desktop/Capstone/d424-software-engineering-capstone/TeaCapstone/Views/Dashboard/_CupsPerDayPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9DdXBzUGVyRGF5UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wmuser/Desktop/Capstone/d424-software-engineering-capstone/TeaCapstone/Views/Dashboard/_FavTypePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9GYXZUeXBlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/wmuser/Desktop/Capstone/d424-software-engineering-capstone/TeaCapstone/Views/Dashboard/_LogsTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9Mb2dzVGFibGVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -4,8 +4,8 @@
 
 <div class="dashboard-main-div">
     <h1>Dashboard</h1>
-    
-   
+
+
     <div id="dashboard-div" class="dark-bg-div">
         <div class="dashboard-buttons-div">
             <a id="add-cup-button" asp-controller="Dashboard" asp-action="Add">Add Cup</a>
@@ -20,7 +20,7 @@
                 <h2>Cups Today</h2>
                 <h1 class="stat-number">@ViewBag.CupsToday</h1>
             </div>
-            
+
             <div class="avg-per-day-div">
                 <h2>Caffeine Today (est)</h2>
                 <h1 class="stat-number">@ViewBag.CaffeineToday mg</h1>
@@ -34,7 +34,7 @@
     </div>
     <div class="dashboard-reports">
         <h2>Reports:</h2>
-        <select>
+        <select id="report-select">
             <option value="">Select a Report</option>
             <option value="CupsPerDay">Cups Per Day</option>
             <option value="FavType">Favorite Type</option>
@@ -46,3 +46,21 @@
     </div>
 
 </div>
+
+<script>
+    document.getElementById("report-select").addEventListener('change', function () {
+        const selectedReport = this.value;
+
+        if (selectedReport) {
+            fetch(`Dashboard/GetReports?reportType=${encodeURIComponent(selectedReport)}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('reports-container').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching the report:', error);
+                    alert("There was an error fetching the report. Please try again.");
+                });
+        }
+    });
+</script>

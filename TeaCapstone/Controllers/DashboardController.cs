@@ -14,18 +14,21 @@ namespace TeaCapstone.Controllers
         private ITeaLogService _teaLogService;
         private IUserService _userService;
         private ITeaRecommendationService _teaRecommendationService;
+        private IReportsService _reportsService;
 
         public DashboardController(IDbService<TeaType> teaTypeService,
             ITeaVarietyService teaVarietyService,
             ITeaLogService teaLogService,
             IUserService userService,
-            ITeaRecommendationService teaRecommendationService)
+            ITeaRecommendationService teaRecommendationService,
+            IReportsService reportsService)
         {
             _teaTypeService = teaTypeService;
             _teaVarietyService = teaVarietyService;
             _teaLogService = teaLogService;
             _userService = userService;
             _teaRecommendationService = teaRecommendationService;
+            _reportsService = reportsService;
         }
         public async Task<IActionResult> Index()
         {
@@ -171,6 +174,25 @@ namespace TeaCapstone.Controllers
                 searchModels.Add(searchModel);
             }
             return PartialView("_LogsTablePartial", searchModels);
+        }
+
+        public async Task<IActionResult> GetReports(string reportType)
+        {
+            string userId = await _userService.GetUserId(User);
+            switch (reportType) 
+            {
+                case "CupsPerDay":
+                    List<CupsPerDayModel> cupsPerDayList = await _reportsService.GetCupsPerDayReport(userId);
+                    return PartialView("_CupsPerDayPartial", cupsPerDayList);
+                case "FavType":
+                    List<FavTypeModel> favTypeList = await _reportsService.GetFavTypeReport(userId);
+                    return PartialView("_FavTypePartial", favTypeList);
+                case "CaffeinePerDay":
+                    List<CaffeinePerDay> caffeinePerDay = await _reportsService.GetCaffeinePerDay(userId);
+                    return PartialView("_CaffeinePerDayPartial", caffeinePerDay);
+                default:
+                    return RedirectToAction("index");
+            }
         }
 
     }
