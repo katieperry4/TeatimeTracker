@@ -21,7 +21,7 @@ namespace TeaCapstone.Services
 
         public TeaLog GetById(int id)
         {
-            return (TeaLog)_dbContext.TeaLog.Where(t => t.Id == id);
+            return (TeaLog)_dbContext.TeaLog.Where(t => t.Id == id).FirstOrDefault();
         }
 
         //note: this is by user ID

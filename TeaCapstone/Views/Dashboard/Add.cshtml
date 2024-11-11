@@ -16,22 +16,22 @@
                         @foreach (var teaType in ViewData["TeaTypes"] as List<TeaType>)
                         {
                             <option value="@teaType.Id">@teaType.Name</option>
-                        } 
+                        }
                     </select>
-                </div> 
+                </div>
                 <div id="add-variety">
                     <label for="add-variety-select" class="add-h3">Variety of Tea: </label>
                     <select id="add-variety-select" name="VarietyId">
                         <option value="">Select Tea Variety</option>
                     </select>
                 </div>
-               
+
             </div>
             <div id="add-date-div">
-                <label  for="add-date-picker"class="add-h3">Date: </label>
-                <input id="add-date-picker date" type="date" name="Date"/>
+                <label for="add-date-picker" class="add-h3">Date: </label>
+                <input id="add-date-picker date" type="date" name="Date" />
             </div>
-            <button type="submit" class="save-button">Save</button>
+            <button type="submit" class="save-button" id="save-button">Save</button>
 
         </form>
     </div>
@@ -40,23 +40,42 @@
 
 
 <script>
-    document.getElementById('add-type-select').addEventListener('change', function() {
+    document.getElementById('save-button').addEventListener('click', function (e) {
+        const selectedType = document.getElementById('add-type-select').value;
+        const selectedVariety = document.getElementById('add-variety-select').value;
+        const selectedDate = document.getElementById('add-date-picker').value;
+
+        if (!selectedType || !selectedVariety{
+            alert("Please select a type and variety");
+            e.preventDefault();
+            return false;
+        }
+        if (!selectedDate) {
+            alert("Please select a valid date");
+            e.preventDefault();
+            return false;
+        }
+    });
+
+
+
+
+    document.getElementById('add-type-select').addEventListener('change', function () {
         var selectedType = this.value;
 
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'GetTeaVarieties?teaTypeId=' + selectedType, true);
-        xhr.onload = function() {
-            if(xhr.status === 200) {
+        xhr.onload = function () {
+            if (xhr.status === 200) {
                 var teaVarieties = JSON.parse(xhr.responseText);
 
                 var varietyDropdown = document.getElementById('add-variety-select');
                 varietyDropdown.innerHTML = '';
-                teaVarieties.forEach(function (variety) 
-                {
+                teaVarieties.forEach(function (variety) {
                     var option = document.createElement('option');
                     option.value = variety.id;
                     option.textContent = variety.name;
-                   
+
                     varietyDropdown.appendChild(option);
                 })
             }

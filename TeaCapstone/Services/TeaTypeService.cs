@@ -20,7 +20,7 @@ namespace TeaCapstone.Services
 
         public TeaType GetById(int id)
         {
-            return (TeaType)_dbContext.TeaType.Where(t => t.Id == id);
+            return (TeaType)_dbContext.TeaType.Where(t => t.Id == id).FirstOrDefault();
         }
 
         public int GetIdByName(string name)
