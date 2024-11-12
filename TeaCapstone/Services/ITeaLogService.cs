@@ -11,7 +11,7 @@ namespace TeaCapstone.Services
 
         public bool UpdateTeaLog(int id, TeaLog log);
 
-        public int GetTotalCups(string userId);
+        public int GetTotalCups(string userId); 
         public int GetCupsToday(string userId);
         public int CaffeineToday(string userId);
 

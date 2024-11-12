@@ -16,7 +16,7 @@ namespace TeaCapstone.Services
         public string RecommendTea(string userId, int caffeineToday)
         {
             List<TeaVariety> allTeas = _teaVarietyService.GetAllEntities();
-            //checks caffeine intake, if it's over 300, recommends only herbal teas
+            //checks caffeine intake, if it's over 300 or after 2pm, recommends only herbal teas
             if (caffeineToday > 300 || DateTime.Now.Hour >= 14)
             {
                 List<TeaVariety> herbalTeas = allTeas.Where(t => t.CaffeineContent == 0).ToList();

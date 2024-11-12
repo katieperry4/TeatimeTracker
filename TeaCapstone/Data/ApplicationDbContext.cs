@@ -12,9 +12,9 @@ namespace TeaCapstone.Data
         {
         }
 
-        public DbSet<TeaLog> TeaLog { get; set; }
-        public DbSet<TeaType> TeaType { get; set; }
-        public DbSet<TeaVariety> TeaVariety { get; set; }
+        public virtual DbSet<TeaLog> TeaLog { get; set; }
+        public virtual DbSet<TeaType> TeaType { get; set; }
+        public virtual DbSet<TeaVariety> TeaVariety { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

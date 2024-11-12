@@ -19,12 +19,15 @@ namespace TeaCapstone.Services
 
         public TeaVariety GetById(int id)
         {
-            return (TeaVariety)_dbContext.TeaVariety.Where(t => t.Id == id).FirstOrDefault();
+            
+            return _dbContext.TeaVariety.Where(t => t.Id == id).FirstOrDefault();
+
+
         }
 
         public int GetIdByName(string name)
         {
-            TeaVariety teaVariety = (TeaVariety)_dbContext.TeaVariety.Where(t => t.Name == name);
+            TeaVariety teaVariety = (TeaVariety)_dbContext.TeaVariety.Where(t => t.Name == name).FirstOrDefault();
 
             return teaVariety.Id;
         }

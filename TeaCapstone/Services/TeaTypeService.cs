@@ -25,7 +25,7 @@ namespace TeaCapstone.Services
 
         public int GetIdByName(string name)
         {
-            TeaType teaType = (TeaType)_dbContext.TeaType.Where(t => t.Name == name);
+            TeaType teaType = (TeaType)_dbContext.TeaType.Where(t => t.Name == name).FirstOrDefault();
 
             return teaType.Id;
         }
