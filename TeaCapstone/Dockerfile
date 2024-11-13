@@ -1,3 +1,11 @@
+#I wasn't sure if I was going to be using docker when I first started making this application.
+#so I had visual studio generate this Dockerfile, but I ultimately decided Docker wasn't necessary for an application like this.
+#I'll leave this file in place in case I decide to use Docker later.
+
+
+
+
+
 # See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
