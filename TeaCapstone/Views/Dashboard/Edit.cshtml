@@ -37,6 +37,7 @@
                 <div id="add-variety">
                     <label for="edit-variety-select" class="add-h3">Variety of Tea: </label>
                     <select id="edit-variety-select" name="VarietyId">
+                        
                         <option value="@ViewBag.CurrentVariety">@ViewBag.CurrentVarietyName</option>
                     </select>
                 </div>
@@ -46,7 +47,7 @@
                 <label for="add-date-picker" class="add-h3">Date: </label>
                 <input id="add-date-picker date" type="date" name="Date" value="@ViewBag.Date" />
             </div>
-            <button type="submit" class="save-button">Save</button>
+            <button type="submit" id="edit-save-button" class="save-button">Save</button>
             <button class="delete-button" asp-controller="Dashboard" asp-action="DeleteLog" asp-route-logId="@ViewBag.LogId">Delete</button>
 
         </form>
@@ -57,12 +58,12 @@
 <script>
 
 
-    document.getElementById('save-button').addEventListener('click', function (e) {
+    document.getElementById('edit-save-button').addEventListener('click', function (e) {
         const selectedType = document.getElementById('edit-type-select').value;
         const selectedVariety = document.getElementById('edit-variety-select').value;
         const selectedDate = document.getElementById('add-date-picker').value;
 
-        if (!selectedType || !selectedVariety{
+        if (!selectedType || !selectedVariety){
             alert("Please select a type and variety");
             e.preventDefault();
             return false;
@@ -84,6 +85,7 @@
             if(xhr.status === 200) {
                 
                 var teaVarieties = JSON.parse(xhr.responseText);
+                console.log(teaVarieties);
 
                 var varietyDropdown = document.getElementById('edit-variety-select');
                 varietyDropdown.innerHTML = '';
