@@ -1,0 +1,21 @@
+﻿@model IEnumerable<TeaCapstone.Models.CaffeinePerDay>
+<div class="reports-table-holder">
+    <h3 class="report-h3">Report generated at: @DateTime.Now;</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Date: </th>
+                <th>Caffeine: </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model)
+            {
+                <tr class="search-row ">
+                    <td class="reports-row-data">@log.Date.ToString("MM-dd-yy")</td>
+                    <td class="reports-row-data">@log.CaffeineTotal mg</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

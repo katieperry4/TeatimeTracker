@@ -1,0 +1,106 @@
+﻿@model TeaCapstone.Models.AddTeaLogViewModel
+
+@{
+    ViewData["Title"] = "Edit Cup";
+}
+
+
+<div id="add-container-div">
+    <h1>Edit Cup of Tea</h1>
+    <h1>TeaLog Id: @ViewBag.LogId</h1>
+    @if(TempData["DeleteFail"] != null)
+    {
+        <h2 class="alert-message">@TempData["DeleteFail"]</h2>
+    }
+    <div class="dark-bg-div" id="add-div">
+
+        <form class="edit-info-div" method="post" action="@Url.Action("UpdateLog", "Dashboard", new {logId = ViewBag.LogId})">
+            <div class="add-tea-info-div">
+                <div id="add-type">
+                    <label for="edit-type-select" class="add-h3">Type of Tea: </label>
+                    <select id="edit-type-select" name="TypeId">
+                        
+                        @foreach (var teaType in ViewData["TeaTypes"] as List<TeaType>)
+                        {
+                            if(teaType.Id == ViewBag.CurrentType)
+                            {
+                                <option value="@teaType.Id" selected="selected">@teaType.Name</option>
+
+                            } else
+                            {
+                                <option value="@teaType.Id">@teaType.Name</option>
+                            }
+
+                        }
+                    </select>
+                </div>
+                <div id="add-variety">
+                    <label for="edit-variety-select" class="add-h3">Variety of Tea: </label>
+                    <select id="edit-variety-select" name="VarietyId">
+                        
+                        <option value="@ViewBag.CurrentVariety">@ViewBag.CurrentVarietyName</option>
+                    </select>
+                </div>
+
+            </div>
+            <div id="add-date-div">
+                <label for="add-date-picker" class="add-h3">Date: </label>
+                <input id="add-date-picker date" type="date" name="Date" value="@ViewBag.Date" />
+            </div>
+            <button type="submit" id="edit-save-button" class="save-button">Save</button>
+            <button class="delete-button" asp-controller="Dashboard" asp-action="DeleteLog" asp-route-logId="@ViewBag.LogId">Delete</button>
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+
+
+    document.getElementById('edit-save-button').addEventListener('click', function (e) {
+        const selectedType = document.getElementById('edit-type-select').value;
+        const selectedVariety = document.getElementById('edit-variety-select').value;
+        const selectedDate = document.getElementById('add-date-picker').value;
+
+        if (!selectedType || !selectedVariety){
+            alert("Please select a type and variety");
+            e.preventDefault();
+            return false;
+        }
+        if (!selectedDate) {
+            alert("Please select a valid date");
+            e.preventDefault();
+            return false;
+        }
+    });
+
+
+    document.getElementById('edit-type-select').addEventListener('change', function() {
+        var selectedType = this.value;
+       
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/Dashboard/GetTeaVarieties?teaTypeId=' + selectedType, true);
+        xhr.onload = function() {
+            if(xhr.status === 200) {
+                
+                var teaVarieties = JSON.parse(xhr.responseText);
+                console.log(teaVarieties);
+
+                var varietyDropdown = document.getElementById('edit-variety-select');
+                varietyDropdown.innerHTML = '';
+                teaVarieties.forEach(function (variety)
+                {
+                    var option = document.createElement('option');
+                    option.value = variety.id;
+                    option.textContent = variety.name;
+
+                    varietyDropdown.appendChild(option);
+                })
+            }
+        }
+        xhr.send();
+    })
+
+
+</script>

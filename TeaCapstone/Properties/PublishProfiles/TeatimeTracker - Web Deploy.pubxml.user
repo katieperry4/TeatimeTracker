@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiXnHKKqt0kGs15us8sRWCAAAAAACAAAAAAAQZgAAAAEAACAAAACYGFfmZXZLfiTnMDSXfa6A+hZyoSsNsP0gX4D28st3zAAAAAAOgAAAAAIAACAAAAC+9H46p5KDmMJuiko8h4DiEFwL7xyx9v+idgroOp5U5YAAAADVUiQSkxt5q1OHkP3cFcuFPAqvUQXtf2zEo1qU4EAQlzqL2TrO8z4V7aASiO6K0Zbevv80ln32YObruMErVEjVN/NB9kTqEpuPBc6LGseASvUErz/9dx4CkF6hmAx9/H+xdnEP14D5iF4ZdVV6ms+SlqLmrjL8yKnuQXKGZHW4AEAAAADdf3MUZaNubcivj4qgkBvZ+vT6oodtLd6JB9hlLw2YaTVAoE9gCGDCzA1Qz6IgzradzwPmJTaJW5m96d7LdB2a</EncryptedPassword>
+    <History>True|2024-11-13T15:26:42.7525288Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=sqlserverteatracker.database.windows.net,1433%3bInitial Catalog=TeaTrackerDB%3bUser ID=azureuser%3bPassword=123!SQLDBServer</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="TeaCapstone.Data.ApplicationDbContext">
+      <Value>Data Source=sqlserverteatracker.database.windows.net,1433%3bInitial Catalog=TeaTrackerDB%3bUser ID=azureuser%3bPassword=123!SQLDBServer</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

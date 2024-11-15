@@ -1,0 +1,23 @@
+﻿@model IEnumerable<TeaCapstone.Models.CupsPerDayModel>
+<div class="reports-table-holder">
+
+
+    <h3 class="report-h3">Report generated at: @DateTime.Now;</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Date: </th>
+            <th>Cups: </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr class="search-row ">
+                <td class="reports-row-data">@log.Date.ToString("MM-dd-yy")</td>
+                <td class ="reports-row-data">@log.CupsTotal</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

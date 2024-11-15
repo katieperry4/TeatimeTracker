@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\wmuser\Desktop\Capstone\d424-software-engineering-capstone\TeaCapstone\obj\Release\net8.0\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\wmuser\Desktop\Capstone\d424-software-engineering-capstone\TeaCapstone\obj\Release\net8.0\PubTmp\EFSQLScripts\TeaCapstone.Data.ApplicationDbContext.sql" />
+</sitemanifest>

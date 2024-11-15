@@ -1,0 +1,21 @@
+﻿@model IEnumerable<TeaCapstone.Models.SearchModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Log ID</th>
+            <th>Date</th>
+            <th>Variety</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr onclick="window.location.href='/Dashboard/Edit/@log.LogId'" class="search-row ">
+                <td>@log.LogId</td>
+                <td>@log.Date.ToString("MM-dd-yy")</td>
+                <td>@log.Variety</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "View Cups";
+}
+
+
+
+<div id="search-container-div">
+    <h1>Search Tea Logs</h1>
+    <div class="dark-bg-div" id="search-div">
+        <label>Date:</label>
+        <input type="date" id="search-date-picker"/>
+        <div id="search-results-container">
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    document.getElementById('search-date-picker').addEventListener('change', function () 
+    {
+        const selectedDate = this.value;
+    
+        if(selectedDate)
+        {
+            fetch(`/Dashboard/GetLogsByDate?date=${encodeURIComponent(selectedDate)}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('search-results-container').innerHTML = data;
+                })
+                .catch(error => console.error("There was an error fetching search results"));
+        }
+    })
+
+</script>
