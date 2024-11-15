@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeaCapstoneTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90923e66fc156d721513b9fbee377430306d9b0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9a0daeb0dbb5c25fb2d653556eb1af60bf97dfa")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeaCapstoneTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeaCapstoneTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
