@@ -9,8 +9,19 @@ I wanted these questions answered in a way that was easy for me to add a cup of 
 
 You can see the live site at: https://teatimetracker.azurewebsites.net
 (If the link doesn't work, it probably means my Azure credits ran out :/ )
+
+## Functionalities 
+-CRUD operations for adding, editing, and deleting cups of tea.
+
+-Recommendations for the next cup of tea based on the time of day and the user's caffeine intake.
+
+-Statistics showing the user's total cups of tea entered, their total for that day, and their caffeine intake for that day.
+
+-Reports showing their total cups of tea per day, their total mg of caffeine by day, and lists each type of tea they've had as well as how many times they had it.
+
 ## Visuals 
 This is what some of the application looks like
+
 Home:
 ![TeatimeTracker](https://imgur.com/jgbe1r5.jpg)
 
